@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
 </head>
 <body>
-$END$
+<script>
+    let temperature= function (doC){
+        this.doC=doC;
+        this.getdoC=function (){
+            return this.doC;
+        }
+        this.getdoF=function (){
+            return 1.8*doC+32;
+        }
+        this.getdoKenvin=function (){
+            return 273.15+doC;
+        }
+    };
+    let chuyendoi=new temperature(25);
+    let doF=chuyendoi.getdoF();
+    let doKenvin=chuyendoi.getdoKenvin();
+    document.write("doF="+doF+"<br>");
+    document.write("doKenvin="+doKenvin);
+</script>
+
 </body>
 </html>
