@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 1</title>
+</head>
+<body>
+<canvas id="mycanvas" width="800px" height="400px" style="border: 1px solid #000000"></canvas>
+<script>
+    let Rectangle=function (chieudai,chieurong){
+        this.chieudai=chieudai;
+        this.chieurong=chieurong;
+    }
+    this.getchieudai=function (){
+        return this.chieudai;
+    }
+    this.getchieurong=function (){
+        return this.chieurong;
+    }
+    this.getdientich=function (){
+        return chieudai*chieurong;
+    }
+    this.getchuvi=function (){
+        return (chieudai+chieurong)*2;
+    }
+    function createRectangle(){
+        var ctx=document.getElementById("mycanvas").getContext("2d");
+        ctx.fillStyle="#FF0000";
+        ctx.fillRect(0,0,120,60);
+    }
+    createRectangle();
+    let rectangle=new Rectangle(150,75);
+    let dientich=rectangle.getdientich;
+    let chuvi=rectangle.getchuvi;
+    document.write("dien tich:"+dientich+"chu vi:"+chuvi);
+</script>
+
+</body>
+</html>
