@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button_Lamp</title>
+</head>
+<script src="lamp.js"></script>
+<script src="button.js"></script>
+<body>
+<script>
+    let lamp = new ElectricLamp();
+    let botton = new swithButton();
+    botton.connectTolamp(lamp);
+    for (let i = 0; i < 5; i++) {
+        botton.swithOn();
+        botton.swithOff();
+    }
+</script>
+
+</body>
+</html>
