@@ -1,10 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>dien thoai</title>
 </head>
 <body>
-$END$
+<script>
+    class Mobile {
+        constructor(name) {
+            this.name = name;
+            this.battery= 100;
+            this.message = "";
+            this.status=false;
+            this.inbox = [];
+            this.outbox = [];
+        }
+        checkOnOff(){
+            if(this.status===true){
+                alert("dien thoai dang bat");
+            }else{
+                alert("dien thoai dang tat");
+            }
+            this.battery--;
+        }
+        turnOn(){
+            return this.status=true;
+            this.battery--;
+        }
+        turnOff(){
+            return this.status=false;
+            this.battery--;
+        }
+        chargeBattery(){
+            if(this.status!==true){
+                alert("dien thoai"+ this.name +"dang tat khong su dung duoc");
+                return;
+            }
+            this.battery +=1;
+        }
+        writeMessage(txt){
+            if(this.status!==true){
+                alert("dien thoai"+ this.name +"dang tat khong su dung duoc");
+                return;
+            }
+            this.message=txt;
+            this.battery--;
+        }
+        sendMesage(phone){
+            if(this.status!==true){
+                alert("dien thoai"+ this.name +"dang tat khong su dung duoc");
+                return;
+            }
+            phone.inbox.push(this.message);
+            this.outbox.push(this.message);
+            this.battery--;
+        }
+        getInbox(){
+            if(this.status!==true){
+                alert("dien thoai"+ this.name +"dang tat khong su dung duoc");
+                return;
+            }
+            this.battery--;
+            return this.inbox;
+        }
+        getOutbox(){
+            if(this.status!==true){
+                alert("dien thoai"+ this.name +"dang tat khong su dung duoc");
+                return;
+            }
+            this.battery--;
+            return this.outbox;
+        }
+    }
+    var iphone=new Mobile('iphone');
+    var lumia=new Mobile('lumia');
+    iphone.turnOn();
+    iphone.writeMessage("gui tin nhan");
+    iphone.sendMesage(lumia);
+    lumia.turnOn();
+    console.log(lumia.getInbox());
+console.log(iphone.battery);
+
+
+</script>
+
 </body>
 </html>

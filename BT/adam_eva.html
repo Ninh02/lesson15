@@ -1,10 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Adam va Eva</title>
 </head>
 <body>
-$END$
+<script>
+    class Apple{
+        constructor() {
+            this.weight = 10;
+            this.isempty=true;
+        }
+        isempty(){
+            return true;
+        }
+        decrease(){
+            this.weight--;
+        }
+        getweigth(){
+           return this.weight;
+        }
+    }
+    class Humen{
+        constructor(name,weight) {
+            this.name=name;
+            this.gender="";
+            this.weigth=weight;
+        }
+        ismale(){
+            if(this.gender==="male") {
+                return true;
+            }else{
+                return false;
+            }
+        }
+        setweigth(){
+            return this.weigth;
+        }
+        setGender(txt){
+            return this.gender=txt;
+        }
+        checkApple(){
+          if(!Apple.isempty){
+              alert("khong co tao");
+          }else{
+              alert("hay an tao");
+          }
+        }
+        eatApple(){
+          while(!Apple.isempty){
+             this.weigth +=1;
+             Apple.decrease();
+             console.log(this.name+"an tao");
+          }
+        }
+    }
+    function play() {
+        var adam = new Humen("adam", 65);
+        var eva = new Humen("eva", 45);
+        var apple=new Apple();
+        adam.setGender("female");
+        eva.setGender("male");
+        if(apple.weigth>0){
+            adam.eatApple();
+            eva.eatApple();
+        }
+    }
+    play();
+</script>
+
 </body>
 </html>

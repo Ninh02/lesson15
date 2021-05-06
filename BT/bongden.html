@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>cong tac va bong den</title>
 </head>
 <body>
-$END$
+<script>
+    class switchButton {
+       constructor(lamp) {
+           this.status=false;
+           this.lamp= lamp;
+       }
+       conectToLamp(lamp){
+           this.lamp=lamp;
+       }
+       buttonturnOff(){
+           this.lamp.lampturnOff();
+       }
+       buttonturnOn(){
+           this.lamp.lampturnOn();
+       }
+    }
+    class electriclamp{
+        constructor() {
+            this.status=false;
+        }
+        lampturnOff(){
+            this.status=false;
+        }
+        lampturnOn(){
+            this.status=true;
+        }
+    }
+    var lampbutton=new switchButton();
+    var whitelamp= new electriclamp();
+    lampbutton.conectToLamp(whitelamp);
+    var count=0;
+    while(count<10){
+        alert(whitelamp.status);
+        lampbutton.buttonturnOff();
+        alert(whitelamp.status);
+        lampbutton.buttonturnOn();
+        count++;
+    }
+</script>
+
 </body>
 </html>

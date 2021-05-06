@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Cat and rat</title>
+    <script src="Cat.js"></script>
+    <script src="Rat.js"></script>
 </head>
 <body>
-$END$
+<script>
+    let tom = new Cat('tom',50,50);
+        let rats=[];
+        let ratsdie=[];
+        for(let i=0;i<10;i++) {
+            let numberspeed = Math.floor(Math.random() * 100 + 1);
+            let rat = new Rat(numberspeed, numberspeed,true);
+            rats.push(rat);
+        }
+    for(let j=0;j<rats.length;j++){
+       if(tom.catch(rats[j])) {
+           tom.eat(rats[j]);
+           ratsdie.push(rats[j]);
+       }
+    }
+    console.log(ratsdie);
+    console.log(tom.weight);
+</script>
+
 </body>
 </html>
